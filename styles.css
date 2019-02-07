@@ -9,9 +9,13 @@ body {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, minmax(30px, auto));
     grid-template-areas:
+<<<<<<< HEAD
      "header header header header header"
      "sidebar sidebar sidebar sidebar sidebar"
      "main main main . .";
+=======
+     "header header header header header";
+>>>>>>> 1f1f08aa8b005224e70e2db7aac70e8d1ad9a73a
 }
 
 header {
@@ -51,6 +55,7 @@ header nav a {
     width: 100%;
 }
 
+<<<<<<< HEAD
 .sidebar {
     background-color: white;
     grid-area: sidebar;
@@ -78,10 +83,15 @@ main{
 
 /* Breakpoint para Tablet */
 @media (min-width: 768px) {
+=======
+/* Media Query - só vai aparecer no computador, não em mobile*/
+@media(min-width: 900px) {
+>>>>>>> 1f1f08aa8b005224e70e2db7aac70e8d1ad9a73a
     header nav {
         display: block;
     }
 
+<<<<<<< HEAD
     .menu-hamburger {
         display: none;
     }
@@ -118,3 +128,8 @@ main{
     }
 }
 
+=======
+.menu-hamburger {
+    display: none;
+}
+>>>>>>> 1f1f08aa8b005224e70e2db7aac70e8d1ad9a73a
