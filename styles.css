@@ -1,0 +1,60 @@
+body {
+    background-color: lightsalmon;
+    margin:0;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, minmax(30px, auto));
+    grid-template-areas:
+     "header header header header header";
+}
+
+header {
+    align-items: center;
+    display: flex;
+    grid-area: header;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+header nav {
+    display: none;
+}
+
+header nav a:nth-child(1) {
+    font-size: 18pt;
+}
+
+header nav a {
+    text-decoration: none;
+}
+
+.menu-hamburger {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;  
+}
+
+.hifen {
+    background-color: black;
+    border-radius: 50px;
+    height: 3px;
+    margin: 1.5px 0;
+    width: 100%;
+}
+
+/* Media Query - só vai aparecer no computador, não em mobile*/
+@media(min-width: 900px) {
+    header nav {
+        display: block;
+    }
+
+.menu-hamburger {
+    display: none;
+}
