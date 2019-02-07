@@ -1,0 +1,120 @@
+body {
+    background-color: lightsalmon;
+    margin:0;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, minmax(30px, auto));
+    grid-template-areas:
+     "header header header header header"
+     "sidebar sidebar sidebar sidebar sidebar"
+     "main main main . .";
+}
+
+header {
+    align-items: center;
+    display: flex;
+    grid-area: header;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+header nav {
+    display: none;
+}
+
+header nav a:nth-child(1) {
+    font-size: 18pt;
+}
+
+header nav a {
+    text-decoration: none;
+}
+
+.menu-hamburger {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;  
+}
+
+.hifen {
+    background-color: black;
+    border-radius: 50px;
+    height: 3px;
+    margin: 1.5px 0;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: white;
+    grid-area: sidebar;
+    padding: 30px 0;
+}
+
+.sidebar nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sidebar nav a {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main{
+    grid-area: main;
+
+}
+
+/* Media Query - só vai aparecer no computador, não em mobile*/
+
+/* Breakpoint para Tablet */
+@media (min-width: 768px) {
+    header nav {
+        display: block;
+    }
+
+    .menu-hamburger {
+        display: none;
+    }
+}
+
+/* Breakpoint para notebooks pequenos */
+@media(min-width: 992px){
+    .grid {
+    grid-template-areas:
+     "header header header header header"
+     "main main main . sidebar"
+     "main main main . sidebar";
+    }
+
+    .sidebar {
+        border-radius: 25px;
+        margin: 5px;
+        box-shadow: 1px 1px 150px 2px rgb(0, 0, 0, 0.1);
+        }
+
+        /* O rgb tem 3 cores, selecionei 0 para vermelho, 0 para verde e 0 para azul. O 0.1 indica a opacidade. */
+
+    .sidebar nav{
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* Breakpoint para notebooks grandes e desktop */
+@media(min-width: 1200px) {
+    main{
+        max-width: 1200;
+
+    }
+}
+
